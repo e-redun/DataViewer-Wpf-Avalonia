@@ -28,7 +28,7 @@ namespace DataViewer.UI.Wpf
             var mainWindow = new MainWindow();
             var mainWindowModel = Services.GetRequiredService<MainWindowModel>();
 
-            mainWindowModel.RequestClose += () => mainWindow.Close();
+            mainWindowModel.CloseRequest += () => mainWindow.Close();
             mainWindow.DataContext = mainWindowModel;
 
             mainWindow.Show();

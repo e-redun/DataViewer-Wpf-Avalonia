@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.Input;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace Common.ViewModels
 {
-    public class MainWindowModel
+    public partial class MainWindowModel
     {
-        public event Action? RequestClose;
+        public event Action? CloseRequest;
 
-        //[RelayCommand]
+        [RelayCommand]
         private void CloseApplication()
         {
-            // Вместо вызова метода конкретного окна, просто генерируем событие
-            RequestClose?.Invoke();
+            CloseRequest?.Invoke();
         }
 
     }
