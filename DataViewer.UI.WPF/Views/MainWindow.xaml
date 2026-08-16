@@ -8,5 +8,35 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid />
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!--  Ряд 0  -->
+        <TextBlock Text="База" />
+
+        <!--  Ряд 1  -->
+        <TextBlock
+            Grid.Column="1"
+            Text="Таблица" />
+
+        <!--  Ряд 2  -->
+        <TextBlock
+            Grid.Column="2"
+            Text="Экземпляр" />
+
+        <!--  Ряд 3  -->
+        <TextBlock
+            Grid.Column="3"
+            Text="Свойства" />
+    </Grid>
 </Window>
