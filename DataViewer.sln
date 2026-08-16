@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataViewer.UI.Wpf", "DataVi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{A420837D-2886-4F7A-8173-9DFB5B0228E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataViewer.UI.Avalonia", "DataViewer.UI.Avalonia\DataViewer.UI.Avalonia.csproj", "{1BAFFAD9-534C-4ADF-9FA3-F039944BAEFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A420837D-2886-4F7A-8173-9DFB5B0228E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A420837D-2886-4F7A-8173-9DFB5B0228E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A420837D-2886-4F7A-8173-9DFB5B0228E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BAFFAD9-534C-4ADF-9FA3-F039944BAEFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BAFFAD9-534C-4ADF-9FA3-F039944BAEFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BAFFAD9-534C-4ADF-9FA3-F039944BAEFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BAFFAD9-534C-4ADF-9FA3-F039944BAEFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
