@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36915.13 d17.14
+VisualStudioVersion = 17.14.36915.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataViewer.UI.WPF", "DataViewer.UI.WPF\DataViewer.UI.WPF.csproj", "{BFC15CA9-7DC8-429A-9325-786F95A834A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataViewer.UI.Wpf", "DataViewer.UI.WPF\DataViewer.UI.Wpf.csproj", "{BFC15CA9-7DC8-429A-9325-786F95A834A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{A420837D-2886-4F7A-8173-9DFB5B0228E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BFC15CA9-7DC8-429A-9325-786F95A834A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC15CA9-7DC8-429A-9325-786F95A834A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFC15CA9-7DC8-429A-9325-786F95A834A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A420837D-2886-4F7A-8173-9DFB5B0228E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A420837D-2886-4F7A-8173-9DFB5B0228E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A420837D-2886-4F7A-8173-9DFB5B0228E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A420837D-2886-4F7A-8173-9DFB5B0228E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
