@@ -11,6 +11,10 @@ namespace Common.ViewModels
     {
         public event Action? CloseRequest;
 
+
+        public string BindingTest { get; set; } = "text_text_text_text";
+
+
         [RelayCommand]
         private void CloseApplication()
         {

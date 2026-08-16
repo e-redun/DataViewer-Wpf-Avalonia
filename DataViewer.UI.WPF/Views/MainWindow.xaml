@@ -24,19 +24,22 @@
         <!--  Ряд 0  -->
         <TextBlock Text="База" />
 
-        <!--  Ряд 1  -->
         <TextBlock
             Grid.Column="1"
             Text="Таблица" />
 
-        <!--  Ряд 2  -->
         <TextBlock
             Grid.Column="2"
             Text="Экземпляр" />
 
-        <!--  Ряд 3  -->
         <TextBlock
             Grid.Column="3"
             Text="Свойства" />
+
+        <!--  Ряд 1  -->
+        <TextBlock
+            Grid.Row="1"
+            Text="{Binding BindingTest}" />
+
     </Grid>
 </Window>
