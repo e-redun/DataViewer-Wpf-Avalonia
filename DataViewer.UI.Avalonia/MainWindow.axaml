@@ -5,5 +5,36 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DataViewer.UI.Avalonia.MainWindow"
         Title="DataViewer.UI.Avalonia">
-    Welcome to Avalonia!
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!--  Ряд 0  -->
+        <TextBlock Text="База" />
+
+        <!--  Ряд 1  -->
+        <TextBlock
+            Grid.Column="1"
+            Text="Таблица" />
+
+        <!--  Ряд 2  -->
+        <TextBlock
+            Grid.Column="2"
+            Text="Экземпляр" />
+
+        <!--  Ряд 3  -->
+        <TextBlock 
+            Grid.Column="3"
+            Text="Свойства" />
+    </Grid>
+    
 </Window>
