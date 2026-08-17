@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,21 @@ using System.Threading.Tasks;
 
 namespace Common.ViewModels
 {
-    public partial class MainWindowModel
+    public partial class MainWindowModel : ObservableObject
     {
         public event Action? CloseRequest;
 
+        [ObservableProperty]
+        private DataBasesViewModel _dataBasesVM;
 
-        public string BindingTest { get; set; } = "text_text_text_text";
+        public MainWindowModel()
+        {
+            InitViewModels();
+        }
+        private void InitViewModels()
+        {
+            _dataBasesVM = new DataBasesViewModel();
+        }
 
 
         [RelayCommand]
