@@ -37,12 +37,6 @@
             Grid.Column="3"
             Text="Свойства" />
         
-        <!--  Ряд 1  -->
-        <TextBlock 
-            Text="{Binding BindingTest}" 
-            Grid.Row="1"
-            Margin="0 20 0 0"
-            />
 
     </Grid>
     

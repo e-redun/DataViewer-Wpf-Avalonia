@@ -21,7 +21,8 @@ namespace DataViewer.UI.Wpf
             base.OnStartup(e);
 
             var services = new ServiceCollection();
-
+            
+            services.AddApplicationServices();
             services.AddViewModels();
 
             Services = services.BuildServiceProvider();

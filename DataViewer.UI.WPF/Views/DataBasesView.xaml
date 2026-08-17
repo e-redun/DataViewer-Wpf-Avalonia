@@ -8,7 +8,9 @@
     d:DesignHeight="450"
     d:DesignWidth="200"
     mc:Ignorable="d">
-    <DockPanel>
+    <DockPanel
+        Background="LightBlue"
+        >
         <TextBlock Text="{Binding Header}" />
 
         <TextBlock
