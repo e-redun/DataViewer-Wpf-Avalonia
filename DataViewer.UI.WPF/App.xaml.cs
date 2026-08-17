@@ -1,4 +1,5 @@
-﻿using Common.ViewModels;
+﻿using Common.Infrastructure;
+using Common.ViewModels;
 using DataViewer.UI.Wpf.Views;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,7 +22,7 @@ namespace DataViewer.UI.Wpf
 
             var services = new ServiceCollection();
 
-            services.AddTransient<MainWindowModel>();
+            services.AddViewModels();
 
             Services = services.BuildServiceProvider();
 

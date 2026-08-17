@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:v="clr-namespace:DataViewer.UI.Wpf.Views"
+    xmlns:vm="clr-namespace:Common.ViewModels;assembly=Common">
+
+    <!--<DataTemplate DataType="{x:Type vm:MainWindowModel}">
+        <v:MainWindow />
+    </DataTemplate>-->
+    
+    <DataTemplate DataType="{x:Type vm:DataBasesViewModel}">
+        <v:DataBasesView />
+    </DataTemplate>
+
+</ResourceDictionary>

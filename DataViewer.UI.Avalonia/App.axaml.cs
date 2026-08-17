@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Common.Infrastructure;
 using Common.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -18,11 +19,11 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        var serviceCollection = new ServiceCollection();
+        var services = new ServiceCollection();
 
-        serviceCollection.AddTransient<MainWindowModel>();
+        services.AddViewModels();
 
-        Services = serviceCollection.BuildServiceProvider();
+        Services = services.BuildServiceProvider();
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

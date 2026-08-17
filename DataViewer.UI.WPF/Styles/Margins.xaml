@@ -1,0 +1,132 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <GridLength x:Key="GridSplitterSize">20</GridLength>
+
+    <system:Double x:Key="MarginGap">20</system:Double>
+    <system:Double x:Key="SmallMarginGap">8</system:Double>
+    <system:Double x:Key="MiniMarginGap">4</system:Double>
+
+    <FontWeight x:Key="AlarmFontWeight">Normal</FontWeight>
+    <FontWeight x:Key="WarningFontWeight">Normal</FontWeight>
+
+    <Thickness x:Key="NoMargin">
+        0
+    </Thickness>
+
+    <Thickness
+        x:Key="AllMargin"
+        Bottom="{StaticResource MarginGap}"
+        Left="{StaticResource MarginGap}"
+        Right="{StaticResource MarginGap}"
+        Top="{StaticResource MarginGap}" />
+
+    <Thickness
+        x:Key="TopMargin"
+        Bottom="0"
+        Left="0"
+        Right="0"
+        Top="{StaticResource MarginGap}" />
+
+    <Thickness
+        x:Key="TopLeftMargin"
+        Bottom="0"
+        Left="{StaticResource MarginGap}"
+        Right="0"
+        Top="{StaticResource MarginGap}" />
+
+    <Thickness
+        x:Key="LeftMargin"
+        Bottom="0"
+        Left="{StaticResource MarginGap}"
+        Right="0"
+        Top="0" />
+
+    <Thickness
+        x:Key="LeftRightMargin"
+        Bottom="0"
+        Left="{StaticResource MarginGap}"
+        Right="{StaticResource MarginGap}"
+        Top="0" />
+
+    <Thickness
+        x:Key="LeftSmallTopMargin"
+        Bottom="0"
+        Left="{StaticResource MarginGap}"
+        Right="0"
+        Top="{StaticResource SmallMarginGap}" />
+
+    <Thickness
+        x:Key="TopRightMargin"
+        Bottom="0"
+        Left="0"
+        Right="{StaticResource MarginGap}"
+        Top="{StaticResource MarginGap}" />
+
+    <Thickness
+        x:Key="RightMargin"
+        Bottom="0"
+        Left="0"
+        Right="{StaticResource MarginGap}"
+        Top="0" />
+
+    <Thickness
+        x:Key="TopBottomMargin"
+        Bottom="{StaticResource MarginGap}"
+        Left="0"
+        Right="0"
+        Top="{StaticResource MarginGap}" />
+
+    <Thickness
+        x:Key="BottomMargin"
+        Bottom="{StaticResource MarginGap}"
+        Left="0"
+        Right="0"
+        Top="0" />
+
+
+    <Thickness
+        x:Key="SmallAllMargin"
+        Bottom="{StaticResource SmallMarginGap}"
+        Left="{StaticResource SmallMarginGap}"
+        Right="{StaticResource SmallMarginGap}"
+        Top="{StaticResource SmallMarginGap}" />
+
+    <Thickness
+        x:Key="SmallLeftMargin"
+        Bottom="0"
+        Left="{StaticResource SmallMarginGap}"
+        Right="0"
+        Top="0" />
+
+    <Thickness
+        x:Key="SmallTopMargin"
+        Bottom="0"
+        Left="0"
+        Right="0"
+        Top="{StaticResource SmallMarginGap}" />
+
+    <Thickness
+        x:Key="SmallRightMargin"
+        Bottom="0"
+        Left="0"
+        Right="{StaticResource SmallMarginGap}"
+        Top="0" />
+
+    <Thickness
+        x:Key="SmallBottomMargin"
+        Bottom="{StaticResource SmallMarginGap}"
+        Left="0"
+        Right="0"
+        Top="0" />
+
+    <Thickness
+        x:Key="SmallTopRightMargin"
+        Bottom="0"
+        Left="0"
+        Right="{StaticResource SmallMarginGap}"
+        Top="{StaticResource SmallMarginGap}" />
+
+</ResourceDictionary>
