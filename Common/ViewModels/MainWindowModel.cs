@@ -15,6 +15,15 @@ namespace Common.ViewModels
         [ObservableProperty]
         private DataBasesViewModel _dataBasesVM;
 
+        [ObservableProperty]
+        private TablesViewModel _tablesVM;
+
+        [ObservableProperty]
+        private TableContentViewModel _tableContentVM;
+
+        [ObservableProperty]
+        private PropertiesViewModel _propertiesVM;
+
         public MainWindowModel()
         {
             InitViewModels();
@@ -22,6 +31,9 @@ namespace Common.ViewModels
         private void InitViewModels()
         {
             _dataBasesVM = new DataBasesViewModel();
+            _tablesVM = new TablesViewModel();
+            _tableContentVM = new TableContentViewModel();
+            _propertiesVM = new PropertiesViewModel();
         }
 
 

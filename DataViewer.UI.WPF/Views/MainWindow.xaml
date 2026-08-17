@@ -23,18 +23,15 @@
 
         <!--  Ряд 0  -->
         <ContentPresenter Content="{Binding DataBasesVM}" />
-
-        <TextBlock
+        <ContentPresenter
             Grid.Column="1"
-            Text="Таблица" />
-
-        <TextBlock
+            Content="{Binding TablesVM}" />
+        <ContentPresenter
             Grid.Column="2"
-            Text="Экземпляр" />
-
-        <TextBlock
+            Content="{Binding TableContentVM}" />
+        <ContentPresenter
             Grid.Column="3"
-            Text="Свойства" />
+            Content="{Binding PropertiesVM}" />
 
         <!--  Ряд 1  -->
         <Button
