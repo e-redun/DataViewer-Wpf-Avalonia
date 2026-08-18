@@ -32,12 +32,12 @@ namespace Common.ViewModels
         // Свойства для хранения выделенного состояния (выборов пользователя)
         // Выбранная строка-имя БД
         [ObservableProperty] 
-        private string? _selectedDatabase;      
-        
+        private string? _selectedDatabase;
+
         // Выбранная строка-имя таблицы
-        [ObservableProperty] 
-        private string? _selectedTable;         
-        
+        [ObservableProperty]
+        private string? _selectedTable;
+
         // Выбранная УНИВЕРСАЛЬНАЯ строка таблицы
         [ObservableProperty] 
         private RowModel? _selectedRow;   
@@ -51,7 +51,6 @@ namespace Common.ViewModels
             PropertiesViewModel propertiesVM)
         {
             _dataService = dataService;
-
             _dataBasesVM = new DataBasesViewModel();
             _tablesVM = new TablesViewModel();
             _tableContentVM = new TableContentViewModel();
@@ -61,49 +60,49 @@ namespace Common.ViewModels
         }
 
         // Логика связывания при смене выбранной БД
-        void OnSelectedDatabaseChanged(string? oldValue, string? newValue)
+        partial void OnSelectedDatabaseChanged(string? value)
         {
             SelectedTable = null;
             SelectedRow = null;
 
-            if (newValue == null)
+            if (value == null)
             {
                 _tablesVM.Clear();
                 return;
             }
 
             // Загружаем список таблиц для выбранной БД
-            var tables = _dataService.GetTables(newValue);
+            var tables = _dataService.GetTables(value);
             _tablesVM.LoadTables(tables);
         }
 
         // Логика связывания при смене выбранной таблицы
-        void OnSelectedTableChanged(string? oldValue, string? newValue)
+        partial void OnSelectedTableChanged(string? value)
         {
             SelectedRow = null;
 
-            if (newValue == null || SelectedDatabase == null)
+            if (value == null || SelectedDatabase == null)
             {
                 _tableContentVM.Clear();
                 return;
             }
 
             // Загружаем контент таблицы
-            var content = _dataService.GetTableContent(SelectedDatabase, newValue);
+            var content = _dataService.GetTableContent(SelectedDatabase, value);
             _tableContentVM.LoadContent(content);
         }
 
         // Логика связывания при клике на СТРОКУ таблицы
-        void OnSelectedRowChanged(Models.RowModel? oldValue, Models.RowModel? newValue)
+        partial void OnSelectedRowChanged(RowModel? value)
         {
-            if (newValue == null)
+            if (value == null)
             {
                 _propertiesVM.Clear();
                 return;
             }
 
             // Отправляем всю строку (список ячеек CellModel) в панель свойств
-            _propertiesVM.LoadProperties(newValue.Cells);
+            _propertiesVM.LoadProperties(value.Cells);
         }
 
         [RelayCommand]
