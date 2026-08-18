@@ -1,4 +1,5 @@
 ﻿using Common.Models;
+using Common.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace Common.ViewModels
         IHeader
     {
         public string Header => "Таблица " + _tableData?.Name;
+        
+        public event Action<string?>? RowChanged;
 
 
         [ObservableProperty] 
@@ -21,13 +24,14 @@ namespace Common.ViewModels
 
         [ObservableProperty]
         private ObservableCollection<RowModel> _rows = new();
+        private readonly IDataService _dataService;
 
-        ////[ObservableProperty]
-        //public ObservableCollection<RowModel> Rows 
-        //{ 
-        //    get => _rows; 
-        //    set => SetProperty(ref _rows, value); 
-        //}
+        public TableContentViewModel(
+            IDataService dataService
+            )
+        {
+            _dataService = dataService;
+        }
 
         internal void LoadContent(TableModel content)
         {
@@ -50,6 +54,11 @@ namespace Common.ViewModels
             TableData = null;
             Rows.Clear();
             OnPropertyChanged(nameof(Header));
+        }
+
+        internal void LoadContentFromTable(string? tableName)
+        {
+            _dataService.GetTableContent(tableName);
         }
     }
 }

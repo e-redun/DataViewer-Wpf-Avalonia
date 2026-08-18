@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using Common.Services;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,13 +9,19 @@ using System.Threading.Tasks;
 
 namespace Common.ViewModels
 {
-    public class DataBasesViewModel : 
+    public partial class DataBasesViewModel : 
         ObservableObject, 
         IHeader
     {
+        [ObservableProperty]
+        private string? _selectedDatabase;
+
         public string Header => "Базы данных";
 
+        public event Action<string?>? DatabaseChanged;
+
         public ObservableCollection<string> Databases { get; set; } = new();
+
 
         internal void LoadDatabases(IEnumerable<string> databases)
         {
@@ -24,6 +31,11 @@ namespace Common.ViewModels
             {
                 Databases.Add(database);
             }
+        }
+
+        partial void OnSelectedDatabaseChanged(string? value)
+        {
+            DatabaseChanged?.Invoke(value);
         }
     }
 }

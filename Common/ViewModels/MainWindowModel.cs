@@ -31,8 +31,8 @@ namespace Common.ViewModels
 
         // Свойства для хранения выделенного состояния (выборов пользователя)
         // Выбранная строка-имя БД
-        [ObservableProperty] 
-        private string? _selectedDatabase;
+        //[ObservableProperty] 
+        //private string? _selectedDatabase;
 
         // Выбранная строка-имя таблицы
         [ObservableProperty]
@@ -44,62 +44,67 @@ namespace Common.ViewModels
 
 
         public MainWindowModel(
-            IDataService dataService,
+            //IDataService dataService,
             DataBasesViewModel dataBasesVM,
             TablesViewModel tablesVM,
             TableContentViewModel tableContentVM,
             PropertiesViewModel propertiesVM)
         {
-            _dataService = dataService;
-            _dataBasesVM = new DataBasesViewModel();
-            _tablesVM = new TablesViewModel();
-            _tableContentVM = new TableContentViewModel();
-            _propertiesVM = new PropertiesViewModel();
+            //_dataService = dataService;
 
-            _dataBasesVM.LoadDatabases(_dataService.GetDatabases());
+            _dataBasesVM = dataBasesVM;
+            _tablesVM = tablesVM;
+            _tableContentVM = tableContentVM;
+            _propertiesVM = propertiesVM;
+
+            //_dataBasesVM.DatabaseChanged += (dbName) => _tablesVM.LoadTables2(dbName);
+            _dataBasesVM.DatabaseChanged += _tablesVM.LoadTablesFromDatabase;
+            _tablesVM.TableChanged += _tableContentVM.LoadContentFromTable;
+            //_dataBasesVM.LoadDatabases(_dataService.GetDatabases());
         }
 
-        partial void OnSelectedDatabaseChanged(string? value)
-        {
-            SelectedTable = null;
-            SelectedRow = null;
 
-            if (value == null)
-            {
-                _tablesVM.Clear();
-                return;
-            }
+        //partial void OnSelectedDatabaseChanged(string? value)
+        //{
+        //    SelectedTable = null;
+        //    SelectedRow = null;
 
-            // Загружаем список таблиц для выбранной БД
-            var tables = _dataService.GetTables(value);
-            _tablesVM.LoadTables(tables);
-        }
+        //    if (value == null)
+        //    {
+        //        _tablesVM.Clear();
+        //        return;
+        //    }
+
+        //    // Загружаем список таблиц для выбранной БД
+        //    var tables = _dataService.GetTables(value);
+        //    _tablesVM.LoadTables(tables);
+        //}
 
         partial void OnSelectedTableChanged(string? value)
         {
-            SelectedRow = null;
+            //SelectedRow = null;
 
-            if (value == null || SelectedDatabase == null)
-            {
-                _tableContentVM.Clear();
-                return;
-            }
+            //if (value == null || SelectedDatabase == null)
+            //{
+            //    _tableContentVM.Clear();
+            //    return;
+            //}
 
-            // Загружаем контент таблицы
-            var content = _dataService.GetTableContent(SelectedDatabase, value);
-            _tableContentVM.LoadContent(content);
+            //// Загружаем контент таблицы
+            //var content = _dataService.GetTableContent(SelectedDatabase, value);
+            //_tableContentVM.LoadContent(content);
         }
 
         partial void OnSelectedRowChanged(RowModel? value)
         {
-            if (value == null)
-            {
-                _propertiesVM.Clear();
-                return;
-            }
+            //if (value == null)
+            //{
+            //    _propertiesVM.Clear();
+            //    return;
+            //}
 
-            // Отправляем всю строку (список ячеек CellModel) в панель свойств
-            _propertiesVM.LoadProperties(value.Cells);
+            //// Отправляем всю строку (список ячеек CellModel) в панель свойств
+            //_propertiesVM.LoadProperties(value.Cells);
         }
 
         [RelayCommand]
