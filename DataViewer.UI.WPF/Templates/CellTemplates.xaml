@@ -2,14 +2,21 @@
     x:Class="DataViewer.UI.Wpf.Templates.CellTemplates"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
- 
+
     <DataTemplate x:Key="TestTemplate">
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="testTitle" />
+        <Grid Margin="3">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="qwe"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{Binding ColumnName}" />
             <TextBox
+                Grid.Column="1"
                 Margin="{StaticResource LeftMargin}"
                 IsReadOnly="True"
-                Text="Title" />
-        </StackPanel>
+                Text="{Binding Value}" />
+        </Grid>
     </DataTemplate>
 </ResourceDictionary>

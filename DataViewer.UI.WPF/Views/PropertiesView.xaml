@@ -19,6 +19,7 @@
             BorderBrush="Gray"
             BorderThickness="1">
             <ItemsControl
+                Grid.IsSharedSizeScope="True"
                 Background="Transparent"
                 ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=v:MainWindow}, Path=DataContext.SelectedRow.Cells}">
                 <ItemsControl.ItemTemplateSelector>
