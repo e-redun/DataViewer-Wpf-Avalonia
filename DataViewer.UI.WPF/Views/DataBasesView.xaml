@@ -8,7 +8,7 @@
     d:DesignHeight="450"
     d:DesignWidth="200"
     mc:Ignorable="d">
-    <DockPanel Background="LightBlue">
+    <DockPanel Background="Transparent">
         <TextBlock
             DockPanel.Dock="Top"
             Text="{Binding Header}" />

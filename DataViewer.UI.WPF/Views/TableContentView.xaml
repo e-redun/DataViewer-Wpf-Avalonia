@@ -3,21 +3,23 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:DataViewer.UI.Wpf.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:v="clr-namespace:DataViewer.UI.Wpf.Views"
     d:DesignHeight="450"
     d:DesignWidth="300"
     mc:Ignorable="d">
-    <DockPanel
-        Background="LightGreen"
-        >
-        <TextBlock Text="{Binding Header}" />
+    <DockPanel Background="Transparent">
 
         <TextBlock
+            DockPanel.Dock="Top"
+            Text="{Binding Header}" />
+
+        <ListBox
             Margin="{StaticResource TopMargin}"
-            Text="Тело" />
-
-
+            Background="Transparent"
+            ItemsSource="{Binding Rows}"
+            SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=v:MainWindow}, Path=DataContext.SelectedRow}" 
+            />
 
     </DockPanel>
 </UserControl>

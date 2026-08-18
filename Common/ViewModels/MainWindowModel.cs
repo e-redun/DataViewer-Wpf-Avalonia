@@ -59,7 +59,6 @@ namespace Common.ViewModels
             _dataBasesVM.LoadDatabases(_dataService.GetDatabases());
         }
 
-        // Логика связывания при смене выбранной БД
         partial void OnSelectedDatabaseChanged(string? value)
         {
             SelectedTable = null;
@@ -76,7 +75,6 @@ namespace Common.ViewModels
             _tablesVM.LoadTables(tables);
         }
 
-        // Логика связывания при смене выбранной таблицы
         partial void OnSelectedTableChanged(string? value)
         {
             SelectedRow = null;
@@ -92,7 +90,6 @@ namespace Common.ViewModels
             _tableContentVM.LoadContent(content);
         }
 
-        // Логика связывания при клике на СТРОКУ таблицы
         partial void OnSelectedRowChanged(RowModel? value)
         {
             if (value == null)

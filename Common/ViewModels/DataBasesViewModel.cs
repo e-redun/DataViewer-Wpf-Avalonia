@@ -16,7 +16,7 @@ namespace Common.ViewModels
 
         public ObservableCollection<string> Databases { get; set; } = new();
 
-        internal void LoadDatabases(List<string> databases)
+        internal void LoadDatabases(IEnumerable<string> databases)
         {
             Databases.Clear();
 

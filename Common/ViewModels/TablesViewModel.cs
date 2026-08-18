@@ -21,7 +21,7 @@ namespace Common.ViewModels
             Tables.Clear();
         }
 
-        internal void LoadTables(List<string> tables)
+        internal void LoadTables(IEnumerable<string> tables)
         {
             Tables.Clear();
 
