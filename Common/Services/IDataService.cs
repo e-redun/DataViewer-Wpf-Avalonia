@@ -11,5 +11,5 @@ public interface IDataService
     List<string> GetTables(string? databaseName);
 
     // Получить данные конкретной таблицы
-    TableModel GetTableContent(string databaseName, string tableName);
+    TableModel GetTableContent(string? databaseName, string? tableName);
 }

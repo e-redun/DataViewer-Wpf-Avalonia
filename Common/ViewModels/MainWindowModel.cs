@@ -59,7 +59,9 @@ namespace Common.ViewModels
 
             //_dataBasesVM.DatabaseChanged += (dbName) => _tablesVM.LoadTables2(dbName);
             _dataBasesVM.DatabaseChanged += _tablesVM.LoadTablesFromDatabase;
+            _dataBasesVM.DatabaseChanged += _tableContentVM.GetDatabaseName;
             _tablesVM.TableChanged += _tableContentVM.LoadContentFromTable;
+            //_tableContentVM.RowChanged += _propertiesVM.LoadProperties2;
             //_dataBasesVM.LoadDatabases(_dataService.GetDatabases());
         }
 

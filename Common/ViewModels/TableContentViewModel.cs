@@ -24,6 +24,7 @@ namespace Common.ViewModels
 
         [ObservableProperty]
         private ObservableCollection<RowModel> _rows = new();
+        private string? _selectedDatabase;
         private readonly IDataService _dataService;
 
         public TableContentViewModel(
@@ -56,9 +57,16 @@ namespace Common.ViewModels
             OnPropertyChanged(nameof(Header));
         }
 
+        internal void GetDatabaseName(string? dbName)
+        {
+            _selectedDatabase = dbName;
+        }
+
+
         internal void LoadContentFromTable(string? tableName)
         {
-            _dataService.GetTableContent(tableName);
+            _dataService.GetTableContent(_selectedDatabase, tableName);
         }
+
     }
 }
