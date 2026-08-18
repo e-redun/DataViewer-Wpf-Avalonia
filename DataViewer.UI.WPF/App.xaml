@@ -5,6 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Converters.xaml" />
                 <ResourceDictionary Source="/Styles/Margins.xaml" />
                 <ResourceDictionary Source="/Styles/ViewMappings.xaml" />
             </ResourceDictionary.MergedDictionaries>

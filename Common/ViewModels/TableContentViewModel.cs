@@ -20,18 +20,27 @@ namespace Common.ViewModels
         private TableModel? _tableData;
 
         [ObservableProperty]
-        public ObservableCollection<RowModel> Rows { get; set; } = new();
+        private ObservableCollection<RowModel> _rows = new();
 
+        ////[ObservableProperty]
+        //public ObservableCollection<RowModel> Rows 
+        //{ 
+        //    get => _rows; 
+        //    set => SetProperty(ref _rows, value); 
+        //}
 
         internal void LoadContent(TableModel content)
         {
             TableData = content;
+            
             Rows.Clear();
-        
+            
             foreach (var row in content.Rows)
             {
                 Rows.Add(row);
             }
+            
+            OnPropertyChanged(nameof(Rows));
 
             OnPropertyChanged(nameof(Header));
         }
@@ -40,6 +49,7 @@ namespace Common.ViewModels
         {
             TableData = null;
             Rows.Clear();
+            OnPropertyChanged(nameof(Header));
         }
     }
 }

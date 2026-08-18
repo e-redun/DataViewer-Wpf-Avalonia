@@ -9,7 +9,6 @@ namespace DataViewer.UI.Wpf.Extensions;
 
 public static class DataGridExtensions
 {
-    // Регистрируем присоединенное свойство, к которому привяжем коллекцию из ViewModel
     public static readonly DependencyProperty DynamicRowsProperty =
         DependencyProperty.RegisterAttached(
             "DynamicRows",
@@ -52,6 +51,7 @@ public static class DataGridExtensions
         dataGrid.Columns.Clear();
 
         var rows = GetDynamicRows(dataGrid);
+
         if (rows == null || rows.Count == 0)
         {
             return;

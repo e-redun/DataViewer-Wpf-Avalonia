@@ -38,11 +38,14 @@ public class MockDataService : IDataService
         {
             table.Rows.Add(CreateRow(new() { ("Id", 101), ("Title", "IT Отдел"), ("Budget", 500000) }));
             table.Rows.Add(CreateRow(new() { ("Id", 102), ("Title", "Бухгалтерия"), ("Budget", 150000) }));
+            table.Rows.Add(CreateRow(new() { ("Id", 103), ("Title", "АСУ"), ("Budget", 250000) }));
         }
         else if (databaseName == "Warehouse.db" && tableName == "Products")
         {
             table.Rows.Add(CreateRow(new() { ("Sku", "A-001"), ("Title", "Ноутбук"), ("Price", 75000.50) }));
             table.Rows.Add(CreateRow(new() { ("Sku", "B-002"), ("Title", "Мышь"), ("Price", 1500.00) }));
+            table.Rows.Add(CreateRow(new() { ("Sku", "B-003"), ("Title", "Монитор"), ("Price", 22500.00) }));
+            table.Rows.Add(CreateRow(new() { ("Sku", "B-004"), ("Title", "Сканер"), ("Price", 33500.00) }));
         }
 
         return table;

@@ -15,8 +15,10 @@
             DockPanel.Dock="Top"
             Text="{Binding Header}" />
 
+            <!--ItemsSource="{Binding Rows}"-->
         <DataGrid
-            ext:DataGridExtensions.DynamicRows="{Binding Rows}"
+            ext:DataGridExtensions.DynamicRows="{Binding Rows, UpdateSourceTrigger=PropertyChanged}"
+            ItemsSource="{Binding Rows}"
             HeadersVisibility="Column"
             Margin="{StaticResource TopMargin}"
             Background="Transparent"
