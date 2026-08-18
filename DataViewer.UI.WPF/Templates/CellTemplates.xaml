@@ -1,0 +1,15 @@
+﻿<ResourceDictionary
+    x:Class="DataViewer.UI.Wpf.Templates.CellTemplates"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ 
+    <DataTemplate x:Key="TestTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="testTitle" />
+            <TextBox
+                Margin="{StaticResource LeftMargin}"
+                IsReadOnly="True"
+                Text="Title" />
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>
