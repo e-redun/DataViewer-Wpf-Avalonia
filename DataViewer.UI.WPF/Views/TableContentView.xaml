@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="clr-namespace:DataViewer.UI.Wpf.Extensions"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:v="clr-namespace:DataViewer.UI.Wpf.Views"
     d:DesignHeight="450"
@@ -14,11 +15,12 @@
             DockPanel.Dock="Top"
             Text="{Binding Header}" />
 
-        <ListBox
+        <DataGrid
+            ext:DataGridExtensions.DynamicRows="{Binding Rows}"
+            HeadersVisibility="Column"
             Margin="{StaticResource TopMargin}"
             Background="Transparent"
-            ItemsSource="{Binding Rows}"
-            SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=v:MainWindow}, Path=DataContext.SelectedRow}" 
+            SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=v:MainWindow}, Path=DataContext.SelectedRow}"
             />
 
     </DockPanel>
