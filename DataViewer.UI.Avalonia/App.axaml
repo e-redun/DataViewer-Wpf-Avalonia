@@ -10,19 +10,19 @@
     <Application.Styles>
         <FluentTheme />
     </Application.Styles>
-    <Application.DataTemplates>
-        <DataTemplate DataType="vm:DataBasesViewModel">
+    <!--<Application.DataTemplates>
+        --><!--<DataTemplate DataType="vm:DataBasesViewModel">
             <v:DataBasesView />
-        </DataTemplate>
-    </Application.DataTemplates>
-    <!--<Application.Resources>
+        </DataTemplate>--><!--
+    </Application.DataTemplates>-->
+    <Application.Resources>
         <ResourceDictionary>
-                <ResourceInclude Source="/Styles/ViewMappings.axaml">
             <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="/Styles/ViewMappings.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>    
-    </Application.Resources>-->
-    <!--<Application.DataTemplates>
-         --><!--<ResourceInclude Source="/Styles/ViewMappings.axaml" />--><!--
-    </Application.DataTemplates>-->
+    </Application.Resources>
+    <Application.DataTemplates>
+          <StaticResource ResourceKey="DataBasesTemplate" />
+    </Application.DataTemplates>
 </Application>
