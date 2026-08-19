@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace Common.ViewModels
     {
         public string Header => "Таблица " + _tableData?.Name;
         
-        public event Action<string?>? RowChanged;
+        public event Action<IEnumerable<FieldModel>?>? RowChanged;
 
 
         [ObservableProperty] 
@@ -24,7 +25,7 @@ namespace Common.ViewModels
 
         [ObservableProperty]
         private ObservableCollection<RowModel> _rows = new();
-        private string? _selectedDatabase;
+        private string? _selectedDatabaseName;
         private readonly IDataService _dataService;
 
         public TableContentViewModel(
@@ -50,22 +51,26 @@ namespace Common.ViewModels
             OnPropertyChanged(nameof(Header));
         }
 
-        internal void Clear()
-        {
-            TableData = null;
-            Rows.Clear();
-            OnPropertyChanged(nameof(Header));
-        }
-
         internal void GetDatabaseName(string? dbName)
         {
-            _selectedDatabase = dbName;
+            _selectedDatabaseName = dbName;
         }
 
 
         internal void LoadContentFromTable(string? tableName)
         {
-            _dataService.GetTableContent(_selectedDatabase, tableName);
+            var tableContent = _dataService.GetTableContent(_selectedDatabaseName, tableName);
+
+            TableData = tableContent;
+
+            Rows.Clear();
+
+            foreach (var row in tableContent.Rows)
+            {
+                Rows.Add(row);
+            }
+
+            OnPropertyChanged(nameof(Header));
         }
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace Common.Models;
 
-public class CellModel
+public class FieldModel
 {
     public string ColumnName { get; set; } = string.Empty;
 

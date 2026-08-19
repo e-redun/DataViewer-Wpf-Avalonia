@@ -10,6 +10,9 @@ namespace Common.ViewModels
     {
         private readonly IDataService _dataService;
 
+        [ObservableProperty]
+        private string? _selectedTable;
+
         public event Action<string?>? TableChanged;
 
         public string Header => "Таблицы";
@@ -25,6 +28,10 @@ namespace Common.ViewModels
             _dataService = dataService;
         }
 
+        partial void OnSelectedTableChanged(string? value)
+        {
+            TableChanged?.Invoke(value);
+        }
 
 
         internal void Clear()
@@ -52,6 +59,8 @@ namespace Common.ViewModels
             {
                 Tables.Add(table);
             }
+
+         //   OnPropertyChanged(nameof(Tables));
         }
     }
 }

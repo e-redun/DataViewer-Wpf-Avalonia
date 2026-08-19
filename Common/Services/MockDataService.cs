@@ -57,7 +57,7 @@ public class MockDataService : IDataService
         var row = new RowModel();
         foreach (var field in fields)
         {
-            row.Cells.Add(new CellModel { ColumnName = field.Name, Value = field.Value });
+            row.Cells.Add(new FieldModel { ColumnName = field.Name, Value = field.Value });
         }
         return row;
     }

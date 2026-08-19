@@ -13,6 +13,8 @@ namespace Common.ViewModels
         ObservableObject, 
         IHeader
     {
+        private readonly IDataService _dataService;
+
         [ObservableProperty]
         private string? _selectedDatabase;
 
@@ -22,9 +24,16 @@ namespace Common.ViewModels
 
         public ObservableCollection<string> Databases { get; set; } = new();
 
-
-        internal void LoadDatabases(IEnumerable<string> databases)
+        public DataBasesViewModel(
+            IDataService dataService
+            )
         {
+            _dataService = dataService;
+        }
+        internal void LoadDatabases()
+        {
+            var databases = _dataService.GetDatabases();
+
             Databases.Clear();
 
             foreach (var database in databases)

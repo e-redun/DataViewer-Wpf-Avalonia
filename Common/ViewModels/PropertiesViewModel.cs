@@ -18,13 +18,10 @@ namespace Common.ViewModels
         {
         }
 
-        internal void LoadProperties(List<CellModel> cells)
+        internal void LoadProperties(IEnumerable<FieldModel>? fields)
         {
+
         }
 
-        internal void LoadProperties2(string? obj)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
