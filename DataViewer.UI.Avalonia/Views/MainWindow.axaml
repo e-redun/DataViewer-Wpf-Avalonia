@@ -26,11 +26,18 @@
         </Grid.RowDefinitions>
 
         <!--  Ряд 0  -->
-        <TextBlock Text="База" />
+        <StackPanel>
+            
+            <TextBlock Text="База"
+                       IsVisible="True"
+                       />
+
+            <ContentPresenter Content="{Binding DataBasesVM}" />
+        </StackPanel>
 
         <TextBlock
             Grid.Column="1"
-            Text="Таблица" />
+            Text="Таблица2" />
 
         <TextBlock
             Grid.Column="2"
