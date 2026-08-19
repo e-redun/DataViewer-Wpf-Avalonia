@@ -39,7 +39,6 @@ namespace Common.ViewModels
             _propertiesVM = propertiesVM;
 
             _dataBasesVM.DatabaseChanged += _tablesVM.LoadTablesFromDatabase;
-            _dataBasesVM.DatabaseChanged += _tableContentVM.GetDatabaseName;
             _tablesVM.TableChanged += _tableContentVM.LoadContentFromTable;
             _tableContentVM.RowChanged += _propertiesVM.LoadProperties;
             

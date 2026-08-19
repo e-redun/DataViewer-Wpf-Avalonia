@@ -21,7 +21,7 @@
             <ItemsControl
                 Grid.IsSharedSizeScope="True"
                 Background="Transparent"
-                ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=v:MainWindow}, Path=DataContext.SelectedRow.Cells}">
+                ItemsSource="{Binding Fields}">
                 <ItemsControl.ItemTemplateSelector>
                     <hlp:CellTemplateSelector />
                 </ItemsControl.ItemTemplateSelector>

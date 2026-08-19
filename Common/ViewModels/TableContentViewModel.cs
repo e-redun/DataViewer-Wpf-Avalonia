@@ -1,13 +1,7 @@
 ﻿using Common.Models;
 using Common.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Common.ViewModels
 {
@@ -15,18 +9,17 @@ namespace Common.ViewModels
         ObservableObject, 
         IHeader
     {
-        public string Header => "Таблица " + _tableData?.Name;
+        private TableModel? _table;
+        private readonly IDataService _dataService;
         
-        public event Action<IEnumerable<FieldModel>?>? RowChanged;
-
-
-        [ObservableProperty] 
-        private TableModel? _tableData;
-
         [ObservableProperty]
         private ObservableCollection<RowModel> _rows = new();
-        private string? _selectedDatabaseName;
-        private readonly IDataService _dataService;
+
+        [ObservableProperty]
+        private RowModel? _selectedRow;
+
+        public event Action<RowModel?>? RowChanged;
+        public string Header => "Таблица " + _table?.Name;
 
         public TableContentViewModel(
             IDataService dataService
@@ -35,37 +28,19 @@ namespace Common.ViewModels
             _dataService = dataService;
         }
 
-        internal void LoadContent(TableModel content)
+        partial void OnSelectedRowChanged(RowModel? value)
         {
-            TableData = content;
-            
-            Rows.Clear();
-            
-            foreach (var row in content.Rows)
-            {
-                Rows.Add(row);
-            }
-            
-            OnPropertyChanged(nameof(Rows));
-
-            OnPropertyChanged(nameof(Header));
-        }
-
-        internal void GetDatabaseName(string? dbName)
-        {
-            _selectedDatabaseName = dbName;
+            RowChanged?.Invoke(value);
         }
 
 
-        internal void LoadContentFromTable(string? tableName)
+        internal void LoadContentFromTable(string? dbName, string? tableName)
         {
-            var tableContent = _dataService.GetTableContent(_selectedDatabaseName, tableName);
-
-            TableData = tableContent;
+            _table = _dataService.GetTable(dbName, tableName);
 
             Rows.Clear();
 
-            foreach (var row in tableContent.Rows)
+            foreach (var row in _table.Rows)
             {
                 Rows.Add(row);
             }

@@ -65,15 +65,15 @@ public static class DataGridExtensions
         }
 
         // Генерируем колонки на основе CellModel
-        for (int i = 0; i < firstRow.Cells.Count; i++)
+        for (int i = 0; i < firstRow.Fields.Count; i++)
         {
-            var cell = firstRow.Cells[i];
+            var cell = firstRow.Fields[i];
 
             var column = new DataGridTextColumn
             {
                 Header = cell.ColumnName,
                 // Используем индекс ячейки для жесткой привязки
-                Binding = new Binding($"Cells[{i}].Value")
+                Binding = new Binding($"Fields[{i}].Value")
             };
 
             dataGrid.Columns.Add(column);

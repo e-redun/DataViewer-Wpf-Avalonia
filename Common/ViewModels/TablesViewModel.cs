@@ -12,8 +12,9 @@ namespace Common.ViewModels
 
         [ObservableProperty]
         private string? _selectedTable;
+        private string? _dbName;
 
-        public event Action<string?>? TableChanged;
+        public event Action<string?, string?>? TableChanged;
 
         public string Header => "Таблицы";
 
@@ -30,7 +31,7 @@ namespace Common.ViewModels
 
         partial void OnSelectedTableChanged(string? value)
         {
-            TableChanged?.Invoke(value);
+            TableChanged?.Invoke(_dbName, value);
         }
 
 
@@ -51,6 +52,8 @@ namespace Common.ViewModels
 
         internal void LoadTablesFromDatabase(string? dbName)
         {
+            _dbName = dbName;
+            
             var tables = _dataService.GetTables(dbName);
 
             Tables.Clear();
@@ -59,8 +62,6 @@ namespace Common.ViewModels
             {
                 Tables.Add(table);
             }
-
-         //   OnPropertyChanged(nameof(Tables));
         }
     }
 }
