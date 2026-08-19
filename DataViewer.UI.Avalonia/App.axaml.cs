@@ -5,6 +5,8 @@ using Common.Infrastructure;
 using Common.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using DataViewer.UI.Avalonia.Views;
+
 
 namespace DataViewer.UI.Avalonia;
 
@@ -21,6 +23,7 @@ public partial class App : Application
     {
         var services = new ServiceCollection();
 
+        services.AddApplicationServices();
         services.AddViewModels();
 
         Services = services.BuildServiceProvider();
