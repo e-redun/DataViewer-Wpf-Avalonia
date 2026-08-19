@@ -8,8 +8,8 @@ public interface IDataService
     List<string> GetDatabases();
 
     // Получить список всех таблиц для конкретной базы данных
-    List<string> GetTables(string databaseName);
+    List<string> GetTables(string? databaseName);
 
     // Получить данные конкретной таблицы
-    TableModel GetTableContent(string databaseName, string tableName);
+    TableModel GetTable(string? databaseName, string? tableName);
 }

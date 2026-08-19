@@ -22,7 +22,7 @@
             HeadersVisibility="Column"
             Margin="{StaticResource TopMargin}"
             Background="Transparent"
-            SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=v:MainWindow}, Path=DataContext.SelectedRow}"
+            SelectedItem="{Binding SelectedRow}"
             />
 
     </DockPanel>

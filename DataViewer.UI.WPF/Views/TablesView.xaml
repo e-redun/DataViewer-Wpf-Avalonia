@@ -17,7 +17,7 @@
             Margin="{StaticResource TopMargin}"
             Background="Transparent"
             ItemsSource="{Binding Tables}"
-            SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=v:MainWindow}, Path=DataContext.SelectedTable}" />
+            SelectedItem="{Binding SelectedTable}" />
 
     </DockPanel>
 </UserControl>

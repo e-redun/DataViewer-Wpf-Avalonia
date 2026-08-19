@@ -22,7 +22,7 @@ public class MockDataService : IDataService
         return new List<string>();
     }
 
-    public TableModel GetTableContent(string databaseName, string tableName)
+    public TableModel GetTable(string databaseName, string tableName)
     {
         var table = new TableModel { Name = tableName };
 
@@ -57,7 +57,7 @@ public class MockDataService : IDataService
         var row = new RowModel();
         foreach (var field in fields)
         {
-            row.Cells.Add(new CellModel { ColumnName = field.Name, Value = field.Value });
+            row.Fields.Add(new FieldModel { ColumnName = field.Name, Value = field.Value });
         }
         return row;
     }
