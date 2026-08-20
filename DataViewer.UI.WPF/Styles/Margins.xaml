@@ -3,18 +3,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
-    <GridLength x:Key="GridSplitterSize">20</GridLength>
-
     <system:Double x:Key="MarginGap">20</system:Double>
     <system:Double x:Key="SmallMarginGap">8</system:Double>
     <system:Double x:Key="MiniMarginGap">4</system:Double>
 
-    <FontWeight x:Key="AlarmFontWeight">Normal</FontWeight>
-    <FontWeight x:Key="WarningFontWeight">Normal</FontWeight>
-
-    <Thickness x:Key="NoMargin">
-        0
-    </Thickness>
+    <Thickness x:Key="NoMargin">0</Thickness>
 
     <Thickness
         x:Key="AllMargin"
