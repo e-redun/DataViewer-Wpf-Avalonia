@@ -12,17 +12,17 @@
         xmlns:vm="using:Common.ViewModels"
         x:DataType="vm:MainWindowModel"
         >
-    <Grid>
+    <Grid Margin="{StaticResource AllMargin}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition Width="150" />
             <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="300" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!--  Ряд 0  -->
@@ -32,34 +32,31 @@
         <ContentControl 
             Content="{Binding TablesVM}"
             Grid.Column="1"
+            Margin="{StaticResource LeftMargin}"
             />
 
         <ContentControl 
             Content="{Binding TableContentVM}"
             Grid.Column="2"
+            Margin="{StaticResource LeftMargin}"
             />
 
         <ContentControl 
             Content="{Binding PropertiesVM}"
             Grid.Column="3"
+            Margin="{StaticResource LeftMargin}"
             />
 
-        <TextBlock
-            Grid.Column="1"
-            Text="Таблица2" 
-            IsVisible="False"
-            />
-
-        <TextBlock
-            Grid.Column="2"
-            IsVisible="False"
-            Text="Экземпляр" />
         
-        <TextBlock 
+        <!--  Ряд 1  -->
+        <Button
+            Grid.Row="1"
             Grid.Column="3"
-            IsVisible="False"
-            Text="Свойства" />
-        
+            Margin="{StaticResource TopMargin}"
+            HorizontalAlignment="Right"
+            Command="{Binding CloseApplicationCommand}"
+            Content="Закрыть"
+            IsCancel="True" />
 
     </Grid>
     

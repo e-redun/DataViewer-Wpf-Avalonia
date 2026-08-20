@@ -8,7 +8,9 @@
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.Styles>
+
         <FluentTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
     </Application.Styles>
     <!--<Application.DataTemplates>
         --><!--<DataTemplate DataType="vm:DataBasesViewModel">

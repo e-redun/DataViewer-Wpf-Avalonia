@@ -4,6 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:ext="using:DataViewer.UI.Avalonia.Extensions"
              xmlns:vm="using:Common.ViewModels"
              x:DataType="vm:TableContentViewModel"
              >
@@ -11,13 +12,26 @@
         <TextBlock
             DockPanel.Dock="Top"
             Text="{Binding Header}" />
+        
+        <DataGrid
+            ext:DataGridExtensions.DynamicRows="{Binding Rows, UpdateSourceTrigger=PropertyChanged}"
+            BorderBrush="Gray"
+            BorderThickness="1"
+            IsVisible="True"
+            Margin="{StaticResource TopMargin}"
+            Background="Transparent"
+            HeadersVisibility="Column"
+            AutoGenerateColumns="True"
+            ItemsSource="{Binding Rows}"
+            SelectedItem="{Binding SelectedRow}" 
+            >
+        </DataGrid>
 
-        <ListBox
+        <!--<ListBox
             Margin="{StaticResource TopMargin}"
             Background="Transparent"
             SelectedItem="{Binding SelectedRow}" 
             ItemsSource="{Binding Rows}"
-            >
-        </ListBox>
+            />-->
     </DockPanel >      
 </UserControl>
