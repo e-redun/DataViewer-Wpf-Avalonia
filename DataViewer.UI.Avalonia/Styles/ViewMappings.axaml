@@ -4,9 +4,9 @@
                     xmlns:v="using:DataViewer.UI.Avalonia.Views"
                     >
     <DataTemplate DataType="vm:DatabasesViewModel"
-                  x:Key="DataBasesTemplate"
+                  x:Key="DatabasesTemplate"
                   >
-        <v:DataBasesView />
+        <v:DatabasesView />
     </DataTemplate>
 
 </ResourceDictionary>

@@ -22,4 +22,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\DataBasesView.axaml.cs">
+      <DependentUpon>DatabasesView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

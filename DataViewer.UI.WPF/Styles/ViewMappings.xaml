@@ -6,7 +6,7 @@
     xmlns:vm="clr-namespace:Common.ViewModels;assembly=Common">
 
     <DataTemplate DataType="{x:Type vm:DatabasesViewModel}">
-        <v:DataBasesView />
+        <v:DatabasesView />
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:TablesViewModel}">

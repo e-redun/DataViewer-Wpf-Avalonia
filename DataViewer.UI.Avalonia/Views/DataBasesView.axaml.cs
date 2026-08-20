@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace DataViewer.UI.Avalonia.Views
 {
-    public partial class DataBasesView : UserControl
+    public partial class DatabasesView : UserControl
     {
-        public DataBasesView()
+        public DatabasesView()
         {
             InitializeComponent();
         }

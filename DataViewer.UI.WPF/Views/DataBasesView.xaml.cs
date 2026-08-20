@@ -1,8 +1,8 @@
 ﻿namespace DataViewer.UI.Wpf.Views
 {
-    public partial class DataBasesView
+    public partial class DatabasesView
     {
-        public DataBasesView()
+        public DatabasesView()
         {
             InitializeComponent();
         }

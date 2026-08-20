@@ -24,6 +24,6 @@
         </ResourceDictionary>    
     </Application.Resources>
     <Application.DataTemplates>
-          <StaticResource ResourceKey="DataBasesTemplate" />
+          <StaticResource ResourceKey="DatabasesTemplate" />
     </Application.DataTemplates>
 </Application>
