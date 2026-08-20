@@ -25,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Templates\FieldTemplates.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\FieldTemplates.axaml.cs">
+      <DependentUpon>FieldTemplates.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\PropertiesView.axaml.cs">
       <DependentUpon>PropertiesView.axaml</DependentUpon>
     </Compile>

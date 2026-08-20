@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary
-    x:Class="DataViewer.UI.Wpf.Templates.CellTemplates"
+    x:Class="DataViewer.UI.Wpf.Templates.FieldTemplates"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
@@ -7,7 +7,7 @@
         <Grid Margin="3">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" SharedSizeGroup="qwe"/>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="NameColumn"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 

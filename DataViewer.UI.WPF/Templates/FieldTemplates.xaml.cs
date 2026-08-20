@@ -2,13 +2,13 @@
 
 namespace DataViewer.UI.Wpf.Templates
 {
-    public partial class CellTemplates
+    public partial class FieldTemplates
     {
-        internal static readonly CellTemplates Instance = new CellTemplates();
+        internal static readonly FieldTemplates Instance = new FieldTemplates();
         public DataTemplate TestTemplate => (DataTemplate)this["TestTemplate"];
 
 
-        public CellTemplates()
+        public FieldTemplates()
         {
             InitializeComponent();
         }

@@ -1,0 +1,25 @@
+<ResourceDictionary 
+                    x:Class="DataViewer.UI.Avalonia.Templates.FieldTemplates"
+                    xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:m="using:Common.Models"
+                    >
+        <DataTemplate x:Key="TestTemplate" DataType="m:FieldModel">
+        <Grid Margin="3">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="NameColumn"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{Binding ColumnName}"
+                       VerticalAlignment="Center"
+                       />
+            <TextBox
+                Grid.Column="1"
+                Margin="{StaticResource LeftMargin}"
+                IsReadOnly="True"
+                Text="{Binding Value}" />
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

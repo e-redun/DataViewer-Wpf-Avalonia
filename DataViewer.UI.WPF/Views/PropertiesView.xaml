@@ -23,7 +23,7 @@
                 Background="Transparent"
                 ItemsSource="{Binding Fields}">
                 <ItemsControl.ItemTemplateSelector>
-                    <hlp:CellTemplateSelector />
+                    <hlp:FieldTemplateSelector />
                 </ItemsControl.ItemTemplateSelector>
             </ItemsControl>
         </Border>

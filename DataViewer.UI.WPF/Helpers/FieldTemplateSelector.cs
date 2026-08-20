@@ -4,11 +4,11 @@ using System.Windows.Controls;
 
 namespace DataViewer.UI.Wpf.Helpers
 {
-    internal class CellTemplateSelector : DataTemplateSelector
+    internal class FieldTemplateSelector : DataTemplateSelector
     {
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            return CellTemplates.Instance.TestTemplate;
+            return FieldTemplates.Instance.TestTemplate;
         }
     }
 }
