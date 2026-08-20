@@ -12,13 +12,11 @@
         <TextBlock
             DockPanel.Dock="Top"
             Text="{Binding Header}" />
-
         <ListBox
             Margin="{StaticResource TopMargin}"
             Background="Transparent"
             ItemsSource="{Binding Databases}"
             SelectedItem="{Binding SelectedDatabase}" />
-
-
     </DockPanel>
+
 </UserControl>

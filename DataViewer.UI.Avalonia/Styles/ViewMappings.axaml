@@ -9,4 +9,22 @@
         <v:DatabasesView />
     </DataTemplate>
 
+    <DataTemplate DataType="vm:TablesViewModel"
+                  x:Key="TablesTemplate"
+                  >
+        <v:TablesView />
+    </DataTemplate>
+
+    <DataTemplate DataType="vm:TableContentViewModel"
+                  x:Key="TableContentTemplate"
+                  >
+        <v:TableContentView />
+    </DataTemplate>
+
+    <DataTemplate DataType="vm:PropertiesViewModel"
+                  x:Key="PropertiesTemplate"
+                  >
+        <v:PropertiesView />
+    </DataTemplate>
+
 </ResourceDictionary>

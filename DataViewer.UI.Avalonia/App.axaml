@@ -25,5 +25,8 @@
     </Application.Resources>
     <Application.DataTemplates>
           <StaticResource ResourceKey="DatabasesTemplate" />
+          <StaticResource ResourceKey="TablesTemplate" />
+          <StaticResource ResourceKey="TableContentTemplate" />
+          <StaticResource ResourceKey="PropertiesTemplate" />
     </Application.DataTemplates>
 </Application>

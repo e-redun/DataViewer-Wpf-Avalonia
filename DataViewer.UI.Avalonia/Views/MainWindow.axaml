@@ -26,25 +26,38 @@
         </Grid.RowDefinitions>
 
         <!--  Ряд 0  -->
-        <StackPanel>
-            
-            <TextBlock Text="База"
-                       IsVisible="True"
-                       />
+        <ContentControl 
+            Content="{Binding DataBasesVM}"/>
 
-            <ContentPresenter Content="{Binding DataBasesVM}" />
-        </StackPanel>
+        <ContentControl 
+            Content="{Binding TablesVM}"
+            Grid.Column="1"
+            />
+
+        <ContentControl 
+            Content="{Binding TableContentVM}"
+            Grid.Column="2"
+            />
+
+        <ContentControl 
+            Content="{Binding PropertiesVM}"
+            Grid.Column="3"
+            />
 
         <TextBlock
             Grid.Column="1"
-            Text="Таблица2" />
+            Text="Таблица2" 
+            IsVisible="False"
+            />
 
         <TextBlock
             Grid.Column="2"
+            IsVisible="False"
             Text="Экземпляр" />
         
         <TextBlock 
             Grid.Column="3"
+            IsVisible="False"
             Text="Свойства" />
         
 

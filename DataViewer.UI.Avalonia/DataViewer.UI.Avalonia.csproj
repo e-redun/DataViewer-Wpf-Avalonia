@@ -24,6 +24,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\PropertiesView.axaml.cs">
+      <DependentUpon>PropertiesView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TableContentView.axaml.cs">
+      <DependentUpon>TableContentView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TablesView.axaml.cs">
+      <DependentUpon>TablesView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DataBasesView.axaml.cs">
       <DependentUpon>DatabasesView.axaml</DependentUpon>
     </Compile>

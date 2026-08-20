@@ -30,6 +30,7 @@ namespace Common.ViewModels
         {
             _dataService = dataService;
         }
+
         internal void LoadDatabases()
         {
             var databases = _dataService.GetDatabases();
