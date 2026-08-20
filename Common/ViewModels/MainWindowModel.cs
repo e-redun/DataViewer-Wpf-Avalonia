@@ -15,7 +15,7 @@ namespace Common.ViewModels
         public event Action? CloseRequest;
 
         [ObservableProperty]
-        private DataBasesViewModel _dataBasesVM;
+        private DatabasesViewModel _dataBasesVM;
 
         [ObservableProperty]
         private TablesViewModel _tablesVM;
@@ -28,7 +28,7 @@ namespace Common.ViewModels
 
 
         public MainWindowModel(
-            DataBasesViewModel dataBasesVM,
+            DatabasesViewModel dataBasesVM,
             TablesViewModel tablesVM,
             TableContentViewModel tableContentVM,
             PropertiesViewModel propertiesVM)

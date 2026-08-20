@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Common.ViewModels
 {
-    public partial class DataBasesViewModel : 
+    public partial class DatabasesViewModel : 
         ObservableObject, 
         IHeader
     {
@@ -24,7 +24,7 @@ namespace Common.ViewModels
 
         public ObservableCollection<string> Databases { get; set; } = new();
 
-        public DataBasesViewModel(
+        public DatabasesViewModel(
             IDataService dataService
             )
         {

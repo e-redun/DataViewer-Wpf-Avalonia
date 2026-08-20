@@ -16,7 +16,7 @@ namespace Common.Infrastructure
         public static IServiceCollection AddViewModels(this IServiceCollection services)
         {
             services.AddSingleton<MainWindowModel>();
-            services.AddSingleton<DataBasesViewModel>();
+            services.AddSingleton<DatabasesViewModel>();
             services.AddSingleton<TablesViewModel>();
             services.AddSingleton<TableContentViewModel>();
             services.AddSingleton<PropertiesViewModel>();

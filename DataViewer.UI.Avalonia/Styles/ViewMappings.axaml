@@ -3,7 +3,7 @@
                     xmlns:vm="using:Common.ViewModels"
                     xmlns:v="using:DataViewer.UI.Avalonia.Views"
                     >
-    <DataTemplate DataType="vm:DataBasesViewModel"
+    <DataTemplate DataType="vm:DatabasesViewModel"
                   x:Key="DataBasesTemplate"
                   >
         <v:DataBasesView />
